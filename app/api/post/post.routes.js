@@ -17,6 +17,7 @@ module.exports = function(app) {
      */
     app.get(baseUrl + '/post', function(req, res) {
         Post.find(function(err, posts) {
+        res.set('Access-Control-Allow-Origin','http://localhost:3000');
             if (err) {
                 return res.send(err);
             }
